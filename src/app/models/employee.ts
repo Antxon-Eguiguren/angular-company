@@ -3,13 +3,13 @@ export class Employee {
     surname: string;
     email: string;
     department: string;
-    active: boolean;
+    active: string;
 
     constructor(pName: string, pSurname: string, pEmail: string, pDepartment: string) {
         this.name = pName;
         this.surname = pSurname;
         this.email = pEmail;
         this.department = pDepartment;
-        this.active = true;
+        this.active = 'Yes';
     }
 }

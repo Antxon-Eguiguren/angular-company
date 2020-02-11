@@ -18,10 +18,12 @@ export class AppComponent {
       new Employee('Aitziber', 'Redondo', 'aitziber@gmail.com', 'Development'),
       new Employee('Jorge', 'Torroglosa', 'jorge@gmail.com', 'Design'),
     ];
+    this.deptSelected = 'All';
   }
 
   handleEmployee($event) {
-    this.arrEmployees.push($event);
+    const employee = new Employee($event.name, $event.surname, $event.email, $event.department);
+    this.arrEmployees.push(employee);
   }
 
   handleSendDept($event) {

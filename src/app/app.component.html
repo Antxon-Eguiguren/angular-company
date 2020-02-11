@@ -1,15 +1,15 @@
 <div class="wrapper">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-6 form">
         <app-form (sendEmployee)="handleEmployee($event)"></app-form>
       </div>
-      <div class="col-6">
+      <div class="col-6 dept">
         <app-dept [dept]="deptSelected"></app-dept>
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 list">
         <app-list [employees]="arrEmployees" (sendDept)="handleSendDept($event)"></app-list>
       </div>
     </div>
