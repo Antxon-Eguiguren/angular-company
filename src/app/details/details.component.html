@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+    <div class="row">
+        <div class="col-12">
+            <app-dept [dept]="employee.department"></app-dept>
+        </div>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Name: {{ employee.name }}</h5>
+        <h5 class="card-text">Surname: {{ employee.surname }}</h5>
+        <p class="card-text">Email: {{ employee.email }}</p>
+        <p class="card-text">Department: {{ employee.department }}</p>
+        <p class="card-text">Active: {{ employee.active  }}</p>
+    </div>
+</div>
