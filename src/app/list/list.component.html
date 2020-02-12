@@ -9,6 +9,6 @@
     </select>
 </div>
 
-<div class="row details">
-    <app-details [employee]="employee" *ngFor="let employee of employees"></app-details>
+<div class="row details" *ngFor="let emp of employees">
+    <app-details [employee]="emp" *ngIf="deptSelected === emp.department || deptSelected === 'All'"></app-details>
 </div>
