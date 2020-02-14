@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor() {
     this.arrEmployees = [
-      new Employee('Antxon', 'Eguiguren', 'antxone@gmail.com', 'Marketing'),
+      new Employee('Antxon', 'Eguiguren', 'antxon@gmail.com', 'Marketing'),
       new Employee('Julia', 'Besada', 'julia@gmail.com', 'HR'),
       new Employee('Aitziber', 'Redondo', 'aitziber@gmail.com', 'Development'),
       new Employee('Jorge', 'Torroglosa', 'jorge@gmail.com', 'Design'),

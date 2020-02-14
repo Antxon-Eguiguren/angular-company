@@ -1,14 +1,19 @@
-<div class="card" style="width: 18rem;">
-    <div class="row">
-        <div class="col-12">
-            <app-dept [dept]="employee.department"></app-dept>
-        </div>
-    </div>
+<div [ngClass]="{'activar': !employee.active}" class="card" style="width: 18rem;">
+    <app-dept [dept]="employee.department"></app-dept>
     <div class="card-body">
-        <h5 class="card-title">Name: {{ employee.name }}</h5>
-        <h5 class="card-text">Surname: {{ employee.surname }}</h5>
+        <h5 class="card-title">{{ employee.name }}</h5>
+        <h5 class="card-text">{{ employee.surname }}</h5>
         <p class="card-text">Email: {{ employee.email }}</p>
         <p class="card-text">Department: {{ employee.department }}</p>
         <p class="card-text">Active: {{ employee.active }}</p>
+        <div class="botones">
+            <div [ngSwitch]="employee.active">
+                <button *ngSwitchCase="true" (click)="handleClickSuspend()" type="button"
+                    class="btn btn-dark">Suspend</button>
+                <button *ngSwitchCase="false" (click)="handleClickSuspend()" type="button"
+                    class="btn btn-success">Activate</button>
+            </div>
+            <button (click)="handleClickFire()" type="button" class="btn btn-danger">Fire</button>
+        </div>
     </div>
 </div>

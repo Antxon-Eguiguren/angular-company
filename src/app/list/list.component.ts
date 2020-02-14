@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } from '@angular/core';
 import { Employee } from '../models/employee';
 
 @Component({
@@ -6,7 +6,7 @@ import { Employee } from '../models/employee';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit, DoCheck {
+export class ListComponent implements OnInit {
 
   @Input() employees: Employee[];
   @Output() sendDept: EventEmitter<string>;
@@ -21,13 +21,18 @@ export class ListComponent implements OnInit, DoCheck {
   ngOnInit() {
   }
 
-  ngDoCheck() {
-    // Probar como resetear el filtrado de empleados al crear un nuevo empleados para que se vean todos (Investigar ngDoCheck o ngOnChanges)
-  }
-
   handleChange($event) {
     this.deptSelected = $event.target.value;
     this.sendDept.emit($event.target.value);
+  }
+
+  handleEmitFire($event) {
+    const position = this.employees.findIndex(employee => {
+      return employee.name === $event.name;
+    });
+    if (position !== -1) {
+      this.employees.splice(position, 1);
+    }
   }
 
 }

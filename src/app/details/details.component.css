@@ -1,0 +1,16 @@
+.card {
+    border: 3px solid black;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-danger {
+    padding: 6px 30px;
+}
+
+.activar {
+    background-color: salmon;
+}

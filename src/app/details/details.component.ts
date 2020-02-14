@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Employee } from '../models/employee';
 
 @Component({
@@ -9,10 +9,21 @@ import { Employee } from '../models/employee';
 export class DetailsComponent implements OnInit {
 
   @Input() employee: Employee;
+  @Output() emitFire: EventEmitter<Employee>;
 
-  constructor() { }
+  constructor() {
+    this.emitFire = new EventEmitter();
+  }
 
   ngOnInit() {
+  }
+
+  handleClickSuspend() {
+    this.employee.active = !this.employee.active;
+  }
+
+  handleClickFire() {
+    this.emitFire.emit(this.employee);
   }
 
 }

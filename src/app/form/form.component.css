@@ -9,3 +9,7 @@ input.ng-valid.ng-touched {
 input.ng-invalid.ng-touched {
     border: 1px solid red;
 }
+
+.btn:disabled {
+    cursor: not-allowed;
+}
